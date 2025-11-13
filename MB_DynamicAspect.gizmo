@@ -10,15 +10,29 @@ Gizmo {
   xpos 254
   ypos -126
  }
+set N791e5c00 [stack 0]
+ Dot {
+  name Dot1
+  xpos 159
+  ypos -43
+ }
+push $N791e5c00
  Crop {
   box {{"\[python ((float(nuke.value(\\\"input.format.width\\\"))\\ -\\ (float(nuke.value(\\\"input.format.height\\\"))\\ *\\ float(nuke.value(\\\"parent.targetAspect\\\"))))\\ /\\ 2.0)\\ if\\ (float(nuke.value(\\\"parent.targetAspect\\\"))\\ <=\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"input.format.height\\\"))))\\ else\\ 0]"} {"\[python ((float(nuke.value(\\\"input.format.height\\\"))\\ -\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"parent.targetAspect\\\"))))\\ /\\ 2.0)\\ if\\ (float(nuke.value(\\\"parent.targetAspect\\\"))\\ >\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"input.format.height\\\"))))\\ else\\ 0]"} {"\[python (float(nuke.value(\\\"input.format.width\\\"))\\ -\\ ((float(nuke.value(\\\"input.format.width\\\"))\\ -\\ (float(nuke.value(\\\"input.format.height\\\"))\\ *\\ float(nuke.value(\\\"parent.targetAspect\\\"))))\\ /\\ 2.0))\\ if\\ (float(nuke.value(\\\"parent.targetAspect\\\"))\\ <=\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"input.format.height\\\"))))\\ else\\ float(nuke.value(\\\"input.format.width\\\"))]"} {"\[python (float(nuke.value(\\\"input.format.height\\\"))\\ -\\ ((float(nuke.value(\\\"input.format.height\\\"))\\ -\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"parent.targetAspect\\\"))))\\ /\\ 2.0))\\ if\\ (float(nuke.value(\\\"parent.targetAspect\\\"))\\ >\\ (float(nuke.value(\\\"input.format.width\\\"))\\ /\\ float(nuke.value(\\\"input.format.height\\\"))))\\ else\\ float(nuke.value(\\\"input.format.height\\\"))]"}}
   name Crop1
   xpos 254
-  ypos -66
+  ypos -63
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 254
+  ypos -16
  }
  Output {
   name Output1
+  selected true
   xpos 254
-  ypos 27
+  ypos 32
  }
 end_group
